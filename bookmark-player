@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$(readlink -f "$0")")"
+mpv "$(python list_bookmarks.py | fzf | awk '{print $NF}')"
